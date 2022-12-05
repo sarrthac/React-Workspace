@@ -38,7 +38,7 @@ Navbar.propTypes = {
 
 
 //If no props are being passed in the component, then the Default content in this prop-type will be displayed.
-Navbar.defaultProps = {
-    title: 'Set title here',
-    aboutText: 'About text here'
-};
+// Navbar.defaultProps = {
+//    // title: 'Set title here',
+//     aboutText: 'About text here'
+// };
