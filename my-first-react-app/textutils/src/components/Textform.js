@@ -54,6 +54,12 @@ export default function Textform(props) {
     setText(event.target.value);
   }
 
+  const findNumOfWords = () =>{
+    let arr1 = text.split(" ");
+    let arr2 = arr1.filter(v => v !== ' ');
+    return arr2.length;
+  }
+
   //using hooks
   const [text,setText] = useState('Enter text here');
   return (
@@ -71,8 +77,10 @@ export default function Textform(props) {
       </div>
       <div className="container my-4" style={{color: props.mode==='dark'?'white':'#464b50'}}>
             <h1>Your Text Summary</h1>
-            {/* text.split(" ") -- function gives the array of words and length of that array is equal to words */}
-            <p> {text.split(" ").length} words & {text.length} characters</p>
+
+            {/* text.split(" ") -- function gives the array of words and length of that array is equal to words
+            // .filter(x => x != "") removes the empty spaces from array */}
+            <p> {(text.split(" ").filter(x => x != "")).length} words & {text.length} characters</p>
             <p>{(0.008 * text.split(" ").length)*60} seconds saved to Analyse the text</p>
             <h2>Preview</h2>
             <p>{text.length>0?text:"Enter something in the textbox above to preview it here"}</p>
