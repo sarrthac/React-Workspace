@@ -7,6 +7,7 @@ export default function Textform(props) {
     console.log("Uppercase was clicked");
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to UpperCase !!","success");
   }
 
   // function to convert the input text to lowercase
@@ -14,6 +15,7 @@ export default function Textform(props) {
     console.log("Lowercase was clicked");
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to lowercase!", "success");
   }
 
   // function to clear the text field area
@@ -21,6 +23,7 @@ export default function Textform(props) {
     console.log("Clear-click was clicked");
     let newText = "";
     setText(newText);
+    props.showAlert("Text Cleared!", "success");
   }
 
   // function to copy the content in text field area
@@ -34,6 +37,7 @@ export default function Textform(props) {
     //main work 
     navigator.clipboard.writeText(copyText.value);
     console.log("copied text: " +copyText.value);
+    props.showAlert("Copied to Clipboard!", "success");
 
   }
 
@@ -41,6 +45,7 @@ export default function Textform(props) {
   const handleExtraSpaces = () => {
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "))
+    props.showAlert("Extra spaces removed!", "success");
   }
 
   // function to handle on change
