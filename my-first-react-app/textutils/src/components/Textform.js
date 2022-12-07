@@ -66,6 +66,7 @@ export default function Textform(props) {
             <button className="btn btn-primary mx-1" onClick={handleUpClick}>Convert to Uppercase</button>
             <button className="btn btn-primary mx-1" onClick={handleLoClick}>Convert to Lowercase</button>
             <button className="btn btn-primary mx-1" onClick={handleClearClick}>Clear text</button>
+            <button className="btn btn-primary mx-1" onClick={handleCopyClick}>Copy Text</button>
             <button className="btn btn-primary mx-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
       </div>
       <div className="container my-4" style={{color: props.mode==='dark'?'white':'#464b50'}}>
