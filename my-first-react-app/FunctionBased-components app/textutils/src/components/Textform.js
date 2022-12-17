@@ -123,9 +123,8 @@ export default function Textform(props) {
         {/* text.split(" ") -- function gives the array of words and length of that array is equal to words
             // .filter(x => x != "") removes the empty spaces from array */}
         <p>
-          {" "}
           {
-            text.split(" ").filter((element) => {
+            text.split(/\s+/).filter((element) => {
               return element.length !== 0;
             }).length
           }{" "}
@@ -133,7 +132,7 @@ export default function Textform(props) {
         </p>
         <p>
           {0.008 *
-            text.split(" ").filter((element) => {
+            text.split(/\s+/).filter((element) => {
               return element.length !== 0;
             }).length *
             60}{" "}
