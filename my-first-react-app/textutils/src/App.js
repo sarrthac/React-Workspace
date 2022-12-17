@@ -1,12 +1,13 @@
 import { useState } from "react";
 import "./App.css";
+import TextForm from "./components/Textform"
 import Alert from "./components/Alert";
 import Navbar from "./components/Navbar";
-import Textform from "./components/Textform";
+
 
 function App() {
 
-  const[mode,setMode] = useState('light')  //Wheather light mode is enabled or not
+  const[mode,setMode] = useState('light')  //Weather light mode is enabled or not
 
   //setting the alert
   const[alert,setAlert] = useState(null);
@@ -36,13 +37,17 @@ function App() {
     }
   }
   return (
-    <>
+    <>    
+   
       <Navbar title="TextUtils" aboutText="About Textutils"  toggleMode={toggleMode} mode={mode}/>
       <Alert alert={alert}  />
       <div className="container my-3">
-        <Textform  showAlert={showAlert}  heading= "Enter Text to Analyze below" mode ={mode} />
-        {/* <About /> */}
+    
+          
+           <TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode}/> 
+ 
       </div>
+   
     </>
   );
 }
