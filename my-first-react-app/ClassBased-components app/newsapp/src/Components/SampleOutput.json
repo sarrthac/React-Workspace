@@ -1,9 +1,7 @@
-import React, { Component } from 'react'
-import NewsItems from './NewsItems'
-
-export class News extends Component {
-
- articles =  [
+{
+  "status": "ok",
+  "totalResults": 10,
+  "articles": [
     {
       "source": { "id": "bbc-news", "name": "BBC News" },
       "author": "BBC News",
@@ -104,30 +102,5 @@ export class News extends Component {
       "publishedAt": "2022-12-17T10:52:20.296034Z",
       "content": "Melbourne City goalkeeper Tom Glover suffered a cut to his face and probable concussion\r\nSaturday's A-League derby between Melbourne City and Melbourne Victory has been abandoned after a player was i… [+746 chars]"
     }
-  ];
-
-  constructor(){
-    console.log("Hello I am the constructor");
-    super();
-    this.state = {
-      articles : this.articles,
-    }
-  };
-  render() {
-    return (
-      <div className='container my-3'>
-        <h2>News-Katta - Top Headlines</h2>
-        <div className="row">
-          {this.state.articles.map((element) => {
-            return  <div className="col-md-4" key={element.url}>
-            <NewsItems  title = {element.title}  imageUrl={element.urlToImage} description = {element.description} newsUrl = {element.url}/>
-            </div>
-          })}
-         
-        </div>
-      </div>
-    )
-  }
+  ]
 }
-
-export default News
