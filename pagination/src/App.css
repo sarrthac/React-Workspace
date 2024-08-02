@@ -15,12 +15,27 @@
     cursor: pointer; /* IMP on Clickables */
 }
 
-
-
 /* In the CSS rule .products__single > img, the > selector is a child combinator. It means that the styles defined within this rule will apply to any <img> element that is a direct child of an element with the class products__single. */
 .products__single > img {
     width: 100%;
     height: 95%;
     object-fit: cover;
     margin-bottom: 3px;
+}
+
+.pagination{
+    padding: 10px;
+    margin: 15px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination > span{
+    padding: 15px 20px;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+
+.pagination__selected{
+    background-color: rgb(220, 220, 220);
 }
