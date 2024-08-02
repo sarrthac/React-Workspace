@@ -20,6 +20,10 @@ function App() {
   }, []);
 
   const selectPageHandler = (selectedPage) => {
+    if(
+      selectedPage >= 1 &&
+      selectedPage <= products.length/10 
+    )
     setPage(selectedPage);
   };
 
@@ -40,7 +44,11 @@ function App() {
       ;
       {products.length > 0 && (
         <div className="pagination">
-          <span>⬅️</span>
+          <span 
+           onClick={() => selectPageHandler(page - 1)} 
+           className={page <= 1?"pagination__disable":""}
+          >
+            ⬅️</span>
           {[...Array(products.length / 10)].map((_, i) => {
             return (
               <span 
@@ -50,7 +58,11 @@ function App() {
               </span>
             );
           })}
-          <span>➡️</span>
+          <span 
+            onClick={() => selectPageHandler(page + 1)}
+            className={page < products.length/10?"":"pagination__disable"}
+          >
+          ➡️</span>
         </div>
       )}
     </div>
